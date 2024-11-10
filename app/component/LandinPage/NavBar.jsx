@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image'; // Importing Next.js Image component
 import styles from "./index.module.css";
 import { useState, useEffect } from "react";
 
@@ -33,18 +34,27 @@ function NavBar() {
         <div className="container mx-auto px-4 py-2 lg:py-3 lg:px-8">
           <nav className={styles.navbar}>
             <div>
-              <img src="/images/cohvey-logo.svg" alt="" className="w-[90%]" />
+              <Image 
+                src="/images/cohvey-logo.svg" 
+                alt="Cohvey Logo" 
+                width={90} // Adjust width based on your design requirements
+                height={40} // Adjust height based on your design requirements
+              />
             </div>
             <div
-              className={`${styles["navbar-collapse"]} ${showNavbar ? styles.show : ""
-                }`}
+              className={`${styles["navbar-collapse"]} ${showNavbar ? styles.show : ""}`}
             >
               {showNavbar && (
                 <div
                   className={`cursor-pointer ml-6 mb-4 lg:none ${styles.position}`}
                   onClick={handleMenu}
                 >
-                  <img src="/images/icons/icons8-close.svg" alt="" />
+                  <Image 
+                    src="/images/icons/icons8-close.svg" 
+                    alt="Close Menu Icon"
+                    width={24} // Adjust dimensions as needed
+                    height={24} // Adjust dimensions as needed
+                  />
                 </div>
               )}
               <ul
@@ -87,7 +97,6 @@ function NavBar() {
                 <span className="relative z-10">Join Waitlist</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 -z-10 rounded-[20px] blur-lg"></span>
               </button>
-
             </div>
           </nav>
         </div>

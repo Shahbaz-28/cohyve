@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Importing Next.js Image component
 
 const Struggling = () => {
   const challenges = [
@@ -36,22 +37,28 @@ const Struggling = () => {
 
   return (
     <section className="bg-col">
-       <div className="container">
-      <div className="flex flex-col items-center justify-center pt-24">
-      <h2 className="text-[60px] text-[#FCFCD8] text-center font-semibold leading-[60px] mb-20 max-w-[800px]">
-        Is your company struggling with design?
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-4 max-w-5xl">
-        {challenges.map((challenge, index) => (
-          <div key={index} className="bg-[#30303066] backdrop-blur-xl text-center p-6 rounded-[35px]">
-             <img src={challenge.imgSrc} className="w-16 h-16 mx-auto mb-7" />
-            <h3 className="text-[#FCFCD8] text-[30px] leading-[31px] font-normal text-center mb-5">{challenge.title}</h3>
-            <p className="text-[#FCFCD880] text-[16px] leading-[25px] font-normal text-center">{challenge.description}</p>
+      <div className="container">
+        <div className="flex flex-col items-center justify-center pt-24">
+          <h2 className="text-[60px] text-[#FCFCD8] text-center font-semibold leading-[60px] mb-20 max-w-[800px]">
+            Is your company struggling with design?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-4 max-w-5xl">
+            {challenges.map((challenge, index) => (
+              <div key={index} className="bg-[#30303066] backdrop-blur-xl text-center p-6 rounded-[35px]">
+                <Image 
+                  src={challenge.imgSrc} 
+                  alt={challenge.title} 
+                  width={64} // Adjust width based on your design requirements
+                  height={64} // Adjust height based on your design requirements
+                  className="w-16 h-16 mx-auto mb-7"
+                />
+                <h3 className="text-[#FCFCD8] text-[30px] leading-[31px] font-normal text-center mb-5">{challenge.title}</h3>
+                <p className="text-[#FCFCD880] text-[16px] leading-[25px] font-normal text-center">{challenge.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-    </div>
     </section>
   );
 };

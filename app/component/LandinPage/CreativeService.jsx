@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
 
 const CreativeService = () => {
  
@@ -88,45 +89,45 @@ const CreativeService = () => {
 
   return (
     <>
-    <section className='bg-[#0C0C0C] pt-24'>
-     <div className="container">
-     <h2 className="text-[60px] text-[#FCFCD8] text-center font-semibold leading-[60px] mb-20 mx-auto max-w-[800px]">
-     All creative service under one roof
-      </h2>
-       <div className='flex items-center justify-center gap-3'>
-        {btn.map((btn, index) => (
-          <div key={index}>
-            <button className='flex items-center bg-[#1B1B1BBA] border-[1px] border-[#FCFCD80F] rounded-[10px] px-3 py-2 text-[#FCFCD8] text-[16px] font-normal'>
-            <img src={btn.imgSrc} alt="" />
-            <span className='ml-2'>{btn.title}</span>
-            </button>
+      <section className='bg-[#0C0C0C] pt-24'>
+        <div className="container">
+          <h2 className="text-[60px] text-[#FCFCD8] text-center font-semibold leading-[60px] mb-20 mx-auto max-w-[800px]">
+            All creative service under one roof
+          </h2>
+          <div className='flex items-center justify-center gap-3'>
+            {btn.map((btn, index) => (
+              <div key={index}>
+                <button className='flex items-center bg-[#1B1B1BBA] border-[1px] border-[#FCFCD80F] rounded-[10px] px-3 py-2 text-[#FCFCD8] text-[16px] font-normal'>
+                  <Image src={btn.imgSrc} alt={btn.title} width={20} height={20} />
+                  <span className='ml-2'>{btn.title}</span>
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-       </div>
-       <div className='flex items-center justify-center gap-3 my-3'>
-        {btnSecondRow.map((btnSecondRow, index) => (
-          <div key={index}>
-            <button className='flex items-center bg-[#1B1B1BBA] border-[1px] border-[#FCFCD80F] rounded-[10px] px-3 py-2 text-[#FCFCD8] text-[16px] font-normal'>
-            <img src={btnSecondRow.imgSrc} alt="" />
-            <span className='ml-2'>{btnSecondRow.title}</span>
-            </button>
+          <div className='flex items-center justify-center gap-3 my-3'>
+            {btnSecondRow.map((btnSecondRow, index) => (
+              <div key={index}>
+                <button className='flex items-center bg-[#1B1B1BBA] border-[1px] border-[#FCFCD80F] rounded-[10px] px-3 py-2 text-[#FCFCD8] text-[16px] font-normal'>
+                  <Image src={btnSecondRow.imgSrc} alt={btnSecondRow.title} width={20} height={20} />
+                  <span className='ml-2'>{btnSecondRow.title}</span>
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-       </div>
-       <div className='flex items-center justify-center gap-3'>
-        {btnThirdRow.map((btnThirdRow, index) => (
-          <div key={index}>
-            <button className='flex items-center bg-[#1B1B1BBA] border-[1px] border-[#FCFCD80F] rounded-[10px] px-3 py-2 text-[#FCFCD8] text-[16px] font-normal'>
-            <img src={btnThirdRow.imgSrc} alt="" />
-            <span className='ml-2'>{btnThirdRow.title}</span>
-            </button>
+          <div className='flex items-center justify-center gap-3'>
+            {btnThirdRow.map((btnThirdRow, index) => (
+              <div key={index}>
+                <button className='flex items-center bg-[#1B1B1BBA] border-[1px] border-[#FCFCD80F] rounded-[10px] px-3 py-2 text-[#FCFCD8] text-[16px] font-normal'>
+                  <Image src={btnThirdRow.imgSrc} alt={btnThirdRow.title} width={20} height={20} />
+                  <span className='ml-2'>{btnThirdRow.title}</span>
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-       </div>
-     </div>
-     </section>
+        </div>
+      </section>
     </>
   )
 }
 
-export default CreativeService
+export default CreativeService;
